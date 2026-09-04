@@ -1,0 +1,6 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="connect_to_gdb" type="CLion_Remote" version="1" toolchain="" remoteCommand="127.0.0.1:1234" symbolFile="$PROJECT_DIR$/cmake-build-debug/$PROJECT_NAME$.elf" sysroot="">
+    <debugger kind="GDB" isBundled="true" />
+    <method v="2" />
+  </configuration>
+</component>

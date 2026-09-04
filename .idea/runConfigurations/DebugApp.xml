@@ -1,0 +1,7 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="DebugApp" type="CompoundRunConfigurationType">
+    <toRun name="connect_to_gdb" type="CLion_Remote" />
+    <toRun name="run_emulator_gdb" type="ShConfigurationType" />
+    <method v="2" />
+  </configuration>
+</component>
