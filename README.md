@@ -24,9 +24,12 @@ GUI version does work but it's annoying since stopping the homebrew app boots yo
 
 ## post-clone TODOs
 
+* `Load CMake Project` This should create:
+  * cmake-build-debug
+  * cmake-build-release
+* execute `build_debug` to create `*.elf` for `connect_to_gdb`
 * go to [run-emulator-gdb.sh](build-scripts/run-emulator-gdb.sh) and set `emulator=` path to your emulator.
 * edit author, description and (optional) name of the homebrew app in [CMakeLists.txt](CMakeLists.txt)
-* optional: create a run 
 
 ## how to run
 
