@@ -24,6 +24,7 @@ GUI version does work but it's annoying since stopping the homebrew app boots yo
 
 ## post-clone TODOs
 
+* rename project directory `template3ds` to your preferred app name
 * `Load CMake Project` This should create:
   * cmake-build-debug
   * cmake-build-release

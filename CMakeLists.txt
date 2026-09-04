@@ -10,11 +10,11 @@ endif()
 
 
 cmake_path(GET CMAKE_CURRENT_SOURCE_DIR FILENAME ProjectName)
+string(REPLACE " " "_" ProjectId "${ProjectName}")
 
-# rename your project here - default is dir name
 set(3DS_APP_NAME ${ProjectName})
 
-project(${3DS_APP_NAME} C CXX)
+project(${ProjectId} C CXX)
 set(CMAKE_CXX_STANDARD 23)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
@@ -22,22 +22,23 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_C_FLAGS_DEBUG "-O0 -g")
 set(CMAKE_CXX_FLAGS_DEBUG "-O0 -g")
 
-add_executable(${3DS_APP_NAME} src/main.cpp)
+add_executable(${ProjectId} src/main.cpp)
 
-target_include_directories(${3DS_APP_NAME} PRIVATE include $ENV{DEVKITPRO}/libctru/include)
-target_link_libraries(${3DS_APP_NAME} PRIVATE ctru m)
+target_include_directories(${ProjectId} PRIVATE include $ENV{DEVKITPRO}/libctru/include)
+target_link_libraries(${ProjectId} PRIVATE ctru m)
 
 if(COMMAND ctr_create_3dsx)
     ctr_generate_smdh(
-        OUTPUT "${CMAKE_CURRENT_BINARY_DIR}/${3DS_APP_NAME}.smdh"
-        NAME "${3DS_APP_NAME}"
-        DESCRIPTION "template for 3ds development"
-        AUTHOR "slyk26"
+            OUTPUT "${CMAKE_CURRENT_BINARY_DIR}/${ProjectId}.smdh"
+            # default project name - can be replaced
+            NAME "${ProjectName}"
+            DESCRIPTION "template for 3ds development"
+            AUTHOR "slyk26"
     )
 
-    ctr_create_3dsx(${3DS_APP_NAME}
-        OUTPUT "${CMAKE_CURRENT_BINARY_DIR}/${3DS_APP_NAME}.3dsx"
-        SMDH "${CMAKE_CURRENT_BINARY_DIR}/${3DS_APP_NAME}.smdh"
+    ctr_create_3dsx(${ProjectId}
+            OUTPUT "${CMAKE_CURRENT_BINARY_DIR}/${ProjectId}.3dsx"
+            SMDH "${CMAKE_CURRENT_BINARY_DIR}/${ProjectId}.smdh"
     )
 
 endif()
