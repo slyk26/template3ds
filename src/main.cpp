@@ -1,5 +1,5 @@
 #include <3ds.h>
-#include "common/logging.hpp"
+#include "logging.hpp"
 
 int main() {
     gfxInitDefault();

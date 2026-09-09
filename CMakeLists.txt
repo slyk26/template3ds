@@ -14,12 +14,11 @@ string(REPLACE " " "_" ProjectId "${ProjectName}")
 
 set(3DS_APP_NAME ${ProjectName})
 
-project(${ProjectId} C CXX)
+project(${ProjectId} CXX)
 set(CMAKE_CXX_STANDARD 23)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 # lower optimization for debug builds to fix <optimized out> variables
-set(CMAKE_C_FLAGS_DEBUG "-O0 -g")
 set(CMAKE_CXX_FLAGS_DEBUG "-O0 -g")
 
 add_executable(${ProjectId} src/main.cpp)
